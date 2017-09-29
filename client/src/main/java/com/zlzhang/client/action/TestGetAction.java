@@ -14,7 +14,7 @@ import okhttp3.Response;
  */
 
 public class TestGetAction extends BaseGetAction {
-    private static final String URL = "";
+    private static final String URL = "/nearby";
 
     public TestGetAction() {
         super(URL);
@@ -27,7 +27,13 @@ public class TestGetAction extends BaseGetAction {
 
     @Override
     protected void doResponse(Response response) {
-        Log.d("test", "test "+ response.toString());
+        try {
+            Log.d("test", "test "+ getJsonStr(response));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     @Override

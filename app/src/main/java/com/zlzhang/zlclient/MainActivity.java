@@ -19,12 +19,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        testGet();
-//        testPost();
+//        testGet();
+        testPost();
     }
 
     private void testGet(){
         TestGetAction testAction = new TestGetAction();
+        List<Pair> pairs = new ArrayList<>();
+        Pair pair1 = new Pair<>("service", "movie");
+        Pair pair2 = new Pair<>("location", "116.481590,39.989175");
+        Pair pair3 = new Pair<>("city", "110000");
+        Pair pair4 = new Pair<>("src", "mypage");
+        Pair pair5 = new Pair<>("coordinate", "gaode");
+        pairs.add(pair1);
+        pairs.add(pair2);
+        pairs.add(pair3);
+        pairs.add(pair4);
+        pairs.add(pair5);
+        testAction.setParam(pairs);
         testAction.execute(true, new ActionHandler() {
             @Override
             public void doActionStart() {
@@ -51,8 +63,16 @@ public class MainActivity extends AppCompatActivity {
     private void testPost() {
         TestPostAction postAction = new TestPostAction();
         List<Pair> pairs = new ArrayList<>();
-        Pair pair1 = new Pair<>("name", "dsd");
+        Pair pair1 = new Pair<>("service", "movie");
+        Pair pair2 = new Pair<>("location", "116.481590,39.989175");
+        Pair pair3 = new Pair<>("city", "110000");
+        Pair pair4 = new Pair<>("src", "mypage");
+        Pair pair5 = new Pair<>("coordinate", "gaode");
         pairs.add(pair1);
+        pairs.add(pair2);
+        pairs.add(pair3);
+        pairs.add(pair4);
+        pairs.add(pair5);
         postAction.setParam(pairs);
         postAction.execute(true, new ActionHandler() {
             @Override

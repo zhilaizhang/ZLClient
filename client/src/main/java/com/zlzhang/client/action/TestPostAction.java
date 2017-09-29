@@ -1,5 +1,6 @@
 package com.zlzhang.client.action;
 
+import android.util.Log;
 import android.util.Pair;
 
 import com.zlzhang.client.base.BasePostAction;
@@ -13,7 +14,7 @@ import okhttp3.Response;
  */
 
 public class TestPostAction extends BasePostAction {
-    private static final String URL = "/getLastVersion";
+    private static final String URL = "/nearby";
 
     public TestPostAction() {
         super(URL);
@@ -26,6 +27,10 @@ public class TestPostAction extends BasePostAction {
 
     @Override
     protected void doResponse(Response response) {
-
+        try {
+            Log.d("test", "test "+ getJsonStr(response));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

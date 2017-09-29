@@ -20,7 +20,7 @@ public class Action implements Serializable {
 
     }
 
-    public static final String URL_TEST   = "http://www.ssyer.com/uploads/org_2017010593503_775.jpg";
+    public static final String URL_TEST   = "http://uri.amap.com";
 
     private int s;
     private String       m;
